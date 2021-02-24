@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="UserRegisterViewModel"
+            type="com.example.myapplication.usr_registrer.UserRegisterViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".usr_registrer.User2RegisterActivity">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/nm_edt"
+            style="@style/myEditTextStyle"
+            android:hint="Enter Your Name"
+            android:text="@={UserRegisterViewModel.usrNm}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/email_edt"
+            style="@style/myEditTextStyle"
+            android:hint="Enter Email Id"
+            android:text="@={UserRegisterViewModel.usrEmail}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nm_edt" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/pass_edt"
+            style="@style/myEditTextStyle"
+            android:hint="Enter 6 Digit Password"
+            android:text="@={UserRegisterViewModel.usrpass}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_edt" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/mobile_edt"
+            style="@style/myEditTextStyle"
+            android:hint="Enter Mobile Number"
+            android:text="@={UserRegisterViewModel.usrmobile}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pass_edt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn"
+            style="@style/btn_style"
+            android:onClick="@{(v) -> UserRegisterViewModel.userRegisterBtn(v)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mobile_edt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
